@@ -4,6 +4,24 @@ Public security research focused on **telecommunications security, 2G/3G/4G/5G n
 
 This repository serves as a public portfolio of published CVEs, coordinated vulnerability disclosures, security issues reported to open-source projects and commercial vendors, and technical publications.
 
+## Awards & Recognition
+
+| Year | Recognition | Details |
+|---|---|---|
+| 2018 | Microsoft MSRC Top 100 Security Researchers | Ranked #36 (tied) at Black Hat USA — [Official Recognition](https://www.microsoft.com/en-us/msrc/blog/2018/08/microsofts-top-100-security-researchers-black-hat-2018-edition) |
+| 2017 | Bugcrowd MVP Researcher | Recognized in Bugcrowd's annual MVP program — [Announcement](https://www.bugcrowd.com/blog/today-we-recognize-our-2017-mvp-researchers/) |
+| 2017 | Bugcrowd Buggy Awards Finalist | Top Kudos Points category — [Announcement](https://www.bugcrowd.com/blog/2nd-annual-buggy-awards-finalists-announcements/) |
+| 2017 | Bugcrowd Hall of Fame | Ranked #2 in June — [Leaderboard](https://www.bugcrowd.com/blog/june-2017-hall-of-fame-results/) |
+| 2016 | Bugcrowd Hall of Fame | Ranked #3 in June — [Leaderboard](https://www.bugcrowd.com/blog/june-2016-leaderboard/) |
+
+**Bugcrowd Researcher Profile:** [Web_Plus](https://bugcrowd.com/h/Web_Plus)
+
+<details>
+<summary>Microsoft MSRC Top 100 — Black Hat USA 2018</summary>
+
+![Microsoft MSRC Top 100](assets/msrc-blackhat-2018.jpg)
+
+</details>
 ## Published CVEs
 
 ### Ella Core — 5G Core Network
