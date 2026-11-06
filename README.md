@@ -1,65 +1,127 @@
-# Telco-security-research
-
 # Security Research & Vulnerability Disclosures
 
-Public vulnerability research focused on telecommunications security, 4G/5G core networks, protocol fuzzing, and security vulnerability discovery.
+Public security research focused on **telecommunications security, 2G/3G/4G/5G networks, protocol fuzzing, vulnerability discovery, and cloud-native network infrastructure**.
 
-This repository documents published CVEs, coordinated vulnerability disclosures, and security issues reported to open-source projects and technology vendors.
+This repository serves as a public portfolio of published CVEs, coordinated vulnerability disclosures, security issues reported to open-source projects and commercial vendors, and technical publications.
 
 ## Published CVEs
 
 ### Ella Core — 5G Core Network
 
-| CVE | Description | Severity | Advisory |
+Research focused on vulnerabilities in AMF processing of NGAP and NAS signaling messages, leading to application crashes and denial-of-service conditions.
+
+| CVE | Vulnerability | Severity | Advisory |
 |---|---|---|---|
 | CVE-2026-32319 | AMF DoS via undersized integrity-protected NAS payload | High | [GHSA](https://github.com/advisories/GHSA-m9pm-w3gv-c68f) |
-| CVE-2026-32320 | AMF DoS via malformed NGAP PathSwitchRequest | Moderate | [GHSA](https://github.com/advisories/GHSA-j478-p7vq-3347) |
-| CVE-2026-33281 | Panic triggered by invalid PDU Session IDs | Moderate | [GHSA](https://github.com/advisories/GHSA-q669-4gmv-g8mf) |
-| CVE-2026-33282 | Panic triggered by malformed NGAP Location Report | High | [GHSA](https://github.com/advisories/GHSA-826q-wrq4-p23x) |
-| CVE-2026-33283 | Panic triggered by malformed ULNASTransport | Moderate | [GHSA](https://github.com/advisories/GHSA-3366-gw57-fcm5) |
+| CVE-2026-32320 | AMF DoS via malformed NGAP PathSwitchRequest with empty NR security capabilities | Moderate | [GHSA](https://github.com/advisories/GHSA-j478-p7vq-3347) |
+| CVE-2026-33281 | AMF panic triggered by invalid PDU Session IDs | Moderate | [GHSA](https://github.com/advisories/GHSA-q669-4gmv-g8mf) |
+| CVE-2026-33282 | AMF panic triggered by malformed NGAP Location Report | High | [GHSA](https://github.com/advisories/GHSA-826q-wrq4-p23x) |
+| CVE-2026-33283 | AMF panic triggered by malformed ULNASTransport message | Moderate | [GHSA](https://github.com/advisories/GHSA-3366-gw57-fcm5) |
 
-**Research:** 5G AMF robustness, NGAP/NAS protocol fuzzing, input validation, and denial-of-service vulnerabilities.
+**Research areas:** 5G Core security, NGAP/NAS protocol fuzzing, input validation, robustness testing, and denial-of-service vulnerabilities.
+
+[View original GitHub researcher credits](https://github.com/advisories?query=credit%3Ap1-aji)
 
 ### free5GC — 5G Core Network
 
-| CVE | Description | Severity | References |
-|---|---|---|---|
-| CVE-2022-38870 | Unauthenticated disclosure of registered UE, subscriber, tenant and user information through the webconsole | High (NVD) | [NVD](https://nvd.nist.gov/vuln/detail/CVE-2022-38870) · [Original report #387](https://github.com/free5gc/free5gc/issues/387) |
+**CVE-2022-38870 — Unauthenticated Subscriber Information Disclosure**
 
-**Research:** Authentication bypass, subscriber information disclosure, and 5G core management interface security.
+Discovered an authentication weakness in the free5GC webconsole exposing registered UE information, subscriber data, tenant details, and user information without authentication.
+
+**References:**
+- [CVE-2022-38870 — NVD](https://nvd.nist.gov/vuln/detail/CVE-2022-38870)
+- [Original Vulnerability Report — GitHub Issue #387](https://github.com/free5gc/free5gc/issues/387)
+
+**Research areas:** Authentication weaknesses, sensitive information disclosure, and 5G Core management interface security.
 
 ### Ericsson Packet Core Controller (PCC)
 
-| CVE | Description | Severity | References |
-|---|---|---|---|
-| CVE-2025-59180 | Hardcoded credentials in the alarm system enabling unauthorized access to alarm and alert information from within the cluster | Medium (CVSS 4.0) | [CVE](https://www.cve.org/CVERecord?id=CVE-2025-59180) · [Ericsson PSIRT](https://www.ericsson.com/en/about-us/security/psirt/security-bulletin-pcc-july-2026) |
+**CVE-2025-59180 — Hardcoded Credentials in the Alarm System**
 
-**Attribution note:** The public Ericsson advisory credits other researchers/organizations. My individual contribution to this finding should be documented separately and confirmed before it is presented as an individually credited discovery.
+Security vulnerability involving hardcoded credentials in the Ericsson Packet Core Controller alarm system, allowing an attacker with cluster access and knowledge of the credentials to read alarm and alert information.
 
-## Public Security Vulnerability Reports
+**References:**
+- [CVE-2025-59180 — Official CVE Record](https://www.cve.org/CVERecord?id=CVE-2025-59180)
+- [Ericsson PSIRT Security Bulletin — July 2026](https://www.ericsson.com/en/about-us/security/psirt/security-bulletin-pcc-july-2026)
 
-### Open5GS
+**Research areas:** Hardcoded credentials, authentication weaknesses, and cloud-native telecommunications infrastructure security.
+
+---
+
+## Public Vulnerability Reports
+
+### Open5GS — 4G/5G Core Network
+
+Vulnerabilities identified through protocol-aware fuzzing and malformed signaling message testing.
 
 | Issue | Finding | Original Report |
 |---|---|---|
-| #4341 | SMF crash caused by malformed Extended Protocol Configuration Options (EPCO) during PDU Session Establishment | [GitHub Issue #4341](https://github.com/open5gs/open5gs/issues/4341) |
-| #4357 | MME crash caused by malformed S1AP/NAS Attach Request | [GitHub Issue #4357](https://github.com/open5gs/open5gs/issues/4357) |
+| #4341 | SMF crash when parsing malformed Extended Protocol Configuration Options (EPCO) during PDU Session Establishment | [GitHub Issue #4341](https://github.com/open5gs/open5gs/issues/4341) |
+| #4357 | MME crash triggered by malformed S1AP/NAS Attach Request | [GitHub Issue #4357](https://github.com/open5gs/open5gs/issues/4357) |
 
-### free5GC
+**Research areas:** S1AP/NAS message processing, EPCO parsing, protocol robustness, and denial-of-service vulnerability discovery.
 
-| Issue | Finding | Original Report |
-|---|---|---|
-| #387 | Unauthenticated exposure of registered UEs, subscriber information, tenants and users via the webconsole (CVE-2022-38870) | [GitHub Issue #387](https://github.com/free5gc/free5gc/issues/387) |
+---
+
+## Publications & Technical Writing
+
+### Fuzzing the Mobile Core: How Malformed 5G/4G Signaling Crashes Production Networks
+
+**Published:** May 7, 2026  
+**Publisher:** P1 Security  
+**Category:** Telecommunications Security Research
+
+Technical research article authored during my time at P1 Security, examining how malformed signaling messages can expose security vulnerabilities and crash mobile core network functions.
+
+The publication covers:
+
+- Protocol-aware fuzzing of 4G/5G mobile core networks.
+- Security testing of NGAP, NAS, PFCP, and HTTP/2 service-based interfaces.
+- Vulnerability discovery through malformed signaling messages.
+- Root cause analysis of parser bugs, assertion failures, and application panics.
+- Real-world vulnerability case studies involving Ella Core.
+- Implications for mobile network availability and resilience.
+
+**[Read the full article — P1 Security](https://www.p1sec.com/blog/fuzzing-the-mobile-core-how-malformed-5g-4g-signaling-crashes-production-networks)**
+
+---
 
 ## Research Focus
 
-- **5G Core Security:** AMF, SMF, UPF, NRF, NAS and NGAP
-- **4G/LTE Core Security:** MME, S1AP, GTP and EPC
-- **Protocol Fuzzing:** NGAP, S1AP, X2AP, PFCP, GTP and NAS
-- **Vulnerability Discovery:** Memory safety, denial of service, authentication bypass and information disclosure
-- **Telecom Infrastructure Security:** Network functions, management interfaces, Kubernetes and cloud-native deployments
-- **Coordinated Vulnerability Disclosure:** Reporting vulnerabilities to maintainers and vendors
+### Telecommunications Security
+
+| Domain | Technologies & Protocols |
+|---|---|
+| 2G / GSM | GSM, GPRS, SS7, MAP, SCCP, SIGTRAN |
+| 3G / UMTS | UMTS, SGSN, GGSN, SS7, MAP, GTP |
+| 4G / LTE | EPC, MME, SGW, PGW, HSS, S1AP, NAS, Diameter, GTP |
+| 5G | 5GC, AMF, SMF, UPF, NRF, AUSF, UDM, NGAP, PFCP, SBI |
+| Cloud-Native Infrastructure | Kubernetes, OpenShift, Linux, Containers |
+| Network & API Security | SCTP, TCP/IP, TLS, HTTP/2, REST, gRPC |
+
+### Security Research & Testing
+
+- Telecom signaling protocol fuzzing and robustness testing.
+- Vulnerability discovery, validation, and root cause analysis.
+- Mobile core and radio access network security assessments.
+- Authentication, authorization, and information disclosure testing.
+- Cloud-native network function penetration testing.
+- Coordinated vulnerability disclosure and technical reporting.
+
+### Tools & Technologies
+
+`Python` · `Scapy` · `Wireshark` · `tcpdump` · `Nmap` · `Burp Suite` · `boofuzz` · `Linux` · `Docker` · `Kubernetes` · `OpenShift` · `Open5GS` · `UERANSIM`
+
+---
 
 ## Research Attribution
 
-This repository is a public index of published findings and does not reproduce proprietary engagement material, confidential vulnerability reports, or non-public proof-of-concept code.
+Some of the vulnerabilities and security reports documented in this repository were originally disclosed through my former professional GitHub account [@p1-aji](https://github.com/p1-aji) during my time at P1 Security.
+
+The original security advisories, GitHub issues, and vendor bulletins remain the authoritative references for published vulnerability details and disclosure history.
+
+This repository provides a personal index of publicly disclosed security research and technical publications.
+
+---
+
+[**Back to GitHub Profile — AH-M-ED**](https://github.com/AH-M-ED)
