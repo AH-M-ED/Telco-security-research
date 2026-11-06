@@ -19,7 +19,7 @@ This repository serves as a public portfolio of published CVEs, coordinated vuln
 <details>
 <summary>Microsoft MSRC Top 100 — Black Hat USA 2018</summary>
 
-![Microsoft MSRC Top 100](assets/msrc-blackhat-2018.jpg)
+![Microsoft MSRC Top 100](msrc-blackhat-2018.jpg)
 
 </details>
 ## Published CVEs
